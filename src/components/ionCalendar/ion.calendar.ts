@@ -3,7 +3,43 @@ import { EventCalendar } from '../../models'
 
 @Component({
   selector: 'ion-calendar',
-  templateUrl: './ion-calendar.html',
+  template: `
+    <div class="calendar-header">
+      <ion-row class="calendar-month">
+        <ion-col col-2 (click)="goToLastMonth()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-col>
+        <ion-col col-8>{{calendar.currentMonth}} {{calendar.currentYear}}</ion-col>
+        <ion-col col-2 (click)="goToNextMonth()">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="calendar-body">
+      <ion-grid>
+        <ion-row justify-content-center class="calendar-weekday">
+          <ion-col>S</ion-col>
+          <ion-col>M</ion-col>
+          <ion-col>T</ion-col>
+          <ion-col>W</ion-col>
+          <ion-col>T</ion-col>
+          <ion-col>F</ion-col>
+          <ion-col>S</ion-col>
+        </ion-row>
+        <ion-row justify-content-center class="calendar-date">
+          <ion-col align-self-center col-1 *ngFor="let lastDay of calendar.daysInLastMonth" class="last-month" (click)="goToLastMonth(lastDay)">{{lastDay}}</ion-col>
+          <ion-col align-self-center col-1 *ngFor="let day of calendar.daysInThisMonth" (click)="selectDate(day)">
+            <span [ngClass]="{'current-date': calendar.currentDate === day}">{{day}}</span>
+            <br>
+            <div class="bullet-container" *ngIf="true && calendar.currentDate !== day">
+              <div class="event-bullet {{'background-' + bullet.color}}" *ngFor="let bullet of getEventsOn(day)"></div>
+            </div>
+          </ion-col>
+          <ion-col align-self-center col-1 *ngFor="let nextDay of calendar.daysInNextMonth" class="next-month" (click)="goToNextMonth(nextDay)">{{nextDay}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  `,
   styleUrls: ['./ion-calendar.scss']
 })
 export class IonCalendarComponent implements OnInit {
