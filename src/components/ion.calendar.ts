@@ -41,7 +41,7 @@ import { EventCalendar } from '../models'
     </div>
   `,
   styles: [`
-    ion-calendar {
+    :host {
       max-width: 400px;
       display: block;
       margin: auto;
