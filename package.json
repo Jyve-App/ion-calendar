@@ -2,9 +2,8 @@
   "name": "ion-calendar",
   "version": "0.0.1",
   "description": "A calendar component made for Ionic 3.x apps",
-  "main": "index.js",
+  "main": "dist/index.js",
   "dependencies": {
-    "ionic3-calendar": "^1.1.6",
     "lodash": "^4.17.11"
   },
   "scripts": {
