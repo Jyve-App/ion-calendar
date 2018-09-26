@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core'
-import { EventCalendar } from '../../models'
+import { EventCalendar } from '../models'
 
 @Component({
   selector: 'ion-calendar',
@@ -40,7 +40,84 @@ import { EventCalendar } from '../../models'
       </ion-grid>
     </div>
   `,
-  styleUrls: ['./ion-calendar.scss']
+  styles: [`
+    ion-calendar {
+      max-width: 400px;
+      display: block;
+      margin: auto;
+
+      [col-1] {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 8.33333%;
+        -ms-flex: 0 0 8.33333%;
+        flex: 0 0 14.285714285714286%;
+        width: 14.285714285714286%;
+        max-width: 14.285714285714286%;
+      }
+      .col {
+        text-align: center;
+        min-height: 35px;
+      }
+      .last-month, .next-month {
+        color: #999999;
+        font-size: 90%;
+      }
+      .current-date {
+        padding: 5px;
+      }
+      .current-date {
+        font-weight: bold;
+        border: 2px solid color($colors, primary);
+        border-radius: 30px;
+      }
+      .calendar-header {
+        font-size: 20px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-color: color($colors, primary);
+        color: #FFFFFF;
+      }
+      .bullet-container {
+        margin: 2px auto;
+        display: flex;
+        flex-direction: row;
+        min-height: 5px;
+        .event-bullet {
+          margin: auto;
+          height: 5px;
+          width: 5px;
+          border-radius: 30px;
+        }
+      }
+
+      .calendar-body {
+        .grid {
+          padding: 0;
+        }
+        .col:last-child {
+          border-right: none;
+        }
+        .calendar-weekday, .calendar-date {
+          text-align: center;
+          margin: 0;
+        }
+        .calendar-weekday {
+          font-weight: bold;
+          border-bottom: solid 1px darken(color($colors, primary), $amount: 20%);
+          background-color: darken(color($colors, primary), $amount: 15%);
+          margin-bottom: 5px;
+        }
+        .calendar-date {
+          background-color: #f8f8f8;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, .2);
+        }
+      }
+    }`
+  ]
 })
 export class IonCalendarComponent implements OnInit {
   @Input('events') events?: Array<any>

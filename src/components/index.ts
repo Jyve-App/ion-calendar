@@ -1,1 +1,1 @@
-export * from './ionCalendar/ion.calendar'
+export * from './ion.calendar'
