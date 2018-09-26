@@ -1,0 +1,61 @@
+{
+  "name": "ion-calendar",
+  "version": "0.0.1",
+  "description": "A calendar component made for Ionic 3.x apps",
+  "main": "index.js",
+  "dependencies": {
+    "ionic3-calendar": "^1.1.6",
+    "lodash": "^4.17.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rimraf dist aot",
+    "build": "ngc",
+    "lint": "tslint \"src/**/*.ts\"",
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "@angular/common": "5.2.11",
+    "@angular/compiler": "5.2.11",
+    "@angular/compiler-cli": "5.2.11",
+    "@angular/core": "5.2.11",
+    "@angular/forms": "5.2.11",
+    "@angular/http": "5.2.11",
+    "@angular/platform-browser": "5.2.11",
+    "@angular/platform-browser-dynamic": "5.2.11",
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
+    "husky": "^1.0.0",
+    "ionic-angular": "^3.9.2",
+    "rimraf": "^2.6.2",
+    "rxjs": "5.5.11",
+    "standard-version": "^4.4.0",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^2.4.2",
+    "zone.js": "0.8.26"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jyve-App/ion-calendar.git"
+  },
+  "keywords": [
+    "ionic",
+    "calendar",
+    "events",
+    "ionic3",
+    "angular2",
+    "angular"
+  ],
+  "author": "Tyler Hall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jyve-App/ion-calendar/issues"
+  },
+  "homepage": "https://github.com/Jyve-App/ion-calendar#readme",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

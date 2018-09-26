@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "no-duplicate-variable": true,
+    "semicolon": [true, "never"],
+    "eofline": true,
+    "no-floating-promises": false
+  },
+  "rulesDirectory": [
+    "node_modules/tslint-eslint-rules/dist/rules"
+  ],
+  "extends": "tslint-config-standard"
+}
