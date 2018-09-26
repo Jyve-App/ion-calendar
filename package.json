@@ -1,6 +1,6 @@
 {
   "name": "ion-calendar",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A calendar component made for Ionic 3.x apps",
   "main": "dist/index.js",
   "dependencies": {
@@ -11,7 +11,7 @@
     "prebuild": "rimraf dist aot",
     "build": "ngc",
     "lint": "tslint \"src/**/*.ts\"",
-    "release": "standard-version"
+    "release": "npm run build && standard-version"
   },
   "devDependencies": {
     "@angular/common": "5.2.11",
