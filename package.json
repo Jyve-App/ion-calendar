@@ -2,14 +2,14 @@
   "name": "ion-calendar",
   "version": "0.0.7",
   "description": "A calendar component made for Ionic 3.x apps",
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "dependencies": {
     "lodash": "^4.17.11"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rimraf dist aot",
-    "build": "ngc",
+    "build": "ngc && npx gulp sass",
     "lint": "tslint \"src/**/*.ts\"",
     "release": "npm run build && standard-version"
   },
@@ -24,6 +24,8 @@
     "@angular/platform-browser-dynamic": "5.2.11",
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
     "husky": "^1.0.0",
     "ionic-angular": "^3.9.2",
     "rimraf": "^2.6.2",
